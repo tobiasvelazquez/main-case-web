@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Vite
+*.local
+
+# Editor & OS
+.DS_Store
+Thumbs.db
+.vscode/settings.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# Internal tooling (not part of the project)
+.agents/
+.claude/
+skills-lock.json
+
+# Internal documentation
+INTERNAL.md

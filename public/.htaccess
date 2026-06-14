@@ -1,0 +1,20 @@
+Options -Indexes
+
+RewriteEngine On
+RewriteBase /
+
+# Entregar archivos/directorios reales sin tocar
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# SPA fallback: todo lo demas va a index.html
+RewriteRule . /index.html [L]
+
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+<FilesMatch "\.(env|ini|log|sql|bak|old|swp)$">
+  Require all denied
+</FilesMatch>
