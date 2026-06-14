@@ -28,3 +28,6 @@ skills-lock.json
 
 # Internal documentation
 INTERNAL.md
+
+# Game binaries (se suben al servidor por FTP, no al repo)
+src/downloads/
