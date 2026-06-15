@@ -67,22 +67,20 @@ export default function Download() {
                 </p>
               )}
 
-              <div className="mt-4 flex flex-col items-center gap-4">
-                <motion.button
-                  type="button"
-                  className="btn-primary inline-flex items-center gap-2 sm:gap-4 text-xs sm:text-base px-5 sm:px-12 py-4 sm:py-5 whitespace-nowrap opacity-50 cursor-not-allowed"
-                  whileHover={{ scale: 1 }}
-                  aria-disabled="true"
-                  onClick={(e) => e.preventDefault()}
+              <div className="mt-4 flex items-center justify-center">
+                <motion.a
+                  href={DOWNLOAD_URL}
+                  download
+                  className="btn-primary inline-flex items-center gap-2 sm:gap-4 text-xs sm:text-base px-5 sm:px-12 py-4 sm:py-5 whitespace-nowrap"
+                  whileHover={{ scale: 1.01 }}
+                  transition={{ duration: 0.15, ease: [0.23, 1, 0.32, 1] }}
+                  onClick={handleDownload}
                 >
                   <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path d="M2 3.2L8 2.3v6H2V3.2ZM9 2.2l7-1.1v7.2H9V2.2ZM2 9.6h6v6.1L2 14.8V9.6ZM9 9.6h7V17l-7-1.1V9.6Z" fill="currentColor" />
                   </svg>
                   Descargar Windows
-                </motion.button>
-                <p className="font-mono text-xs tracking-[0.18em] uppercase text-horror-red animate-pulse">
-                  Descarga temporalmente no disponible — volvé en unos minutos
-                </p>
+                </motion.a>
               </div>
             </RevealSection>
           </div>
