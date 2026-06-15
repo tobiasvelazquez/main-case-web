@@ -5,6 +5,7 @@ import { GAME_TITLE } from '../constants'
 
 const NAV_LINKS = [
   { to: '/', label: 'INICIO' },
+  { to: '/hall-of-fame', label: 'HALL OF FAME' },
   { to: '/contacto', label: 'CONTACTO' },
   { to: '/creditos', label: 'CREDITOS' },
 ]

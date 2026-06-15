@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import Contact from './pages/Contact'
 import Download from './pages/Download'
 import Credits from './pages/Credits'
+import HallOfFame from './pages/HallOfFame'
 
 export default function App() {
   const location = useLocation()
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="/contacto" element={<Contact />} />
           <Route path="/descargar" element={<Download />} />
           <Route path="/creditos" element={<Credits />} />
+          <Route path="/hall-of-fame" element={<HallOfFame />} />
         </Routes>
       </AnimatePresence>
 
