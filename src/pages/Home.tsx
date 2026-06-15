@@ -319,22 +319,73 @@ function BossCarouselSection() {
   )
 }
 
+const PATCH_NOTES = [
+  {
+    version: '1.0',
+    label: 'Lanzamiento inicial',
+    current: true,
+    notes: [
+      'Capítulo 1 completo — casa suburbana y escape',
+      'Boss Bagman con 5 niveles de enojo y fase de enrage',
+      '5 grabaciones coleccionables',
+      '9 notas distribuidas en el escenario',
+      'Sistema de stamina para sprint y salto',
+      'Inventario con armas, munición y llaves',
+      'Menú de opciones completo — video, audio, sensibilidad, screamer',
+      'Settings persistentes entre sesiones',
+      'Screamer de muerte configurable',
+    ],
+  },
+  {
+    version: '1.1',
+    label: 'Próximamente',
+    current: false,
+    notes: [
+      'Notas con historia completa y detallada',
+      'Mejoras en la IA del boss',
+      'Optimización de rendimiento general',
+      'Nuevos sonidos ambientales',
+      'Correcciones de bugs menores',
+    ],
+  },
+]
+
 function VersionPreviewSection() {
   return (
     <section className="py-16 max-w-7xl mx-auto px-6">
-      <RevealSection className="mb-6">
+      <RevealSection className="mb-10">
         <div className="flex items-center gap-4">
           <span className="section-label">Versiones</span>
           <div className="flex-1 h-px bg-horror-border" />
         </div>
       </RevealSection>
 
-      <RevealSection delay={0.05}>
-        <div className="card-horror max-w-sm">
-          <p className="font-mono text-xs tracking-[0.18em] text-horror-text-dim uppercase mb-2">Versión actual</p>
-          <p className="font-mono text-lg tracking-widest text-white">v{GAME_VERSION}</p>
-        </div>
-      </RevealSection>
+      <div className="flex flex-col gap-6 max-w-lg">
+        {PATCH_NOTES.map(({ version, label, current, notes }, vi) => (
+          <RevealSection key={version} delay={vi * 0.08}>
+            <div className={`card-horror border ${current ? 'border-horror-border' : 'border-horror-border/40'}`}>
+              <div className="flex items-baseline gap-3 mb-4">
+                <p className={`font-mono text-lg tracking-widest ${current ? 'text-white' : 'text-horror-text-dim/50'}`}>
+                  v{version}
+                </p>
+                <span className={`font-mono text-xs tracking-[0.18em] uppercase ${current ? 'text-horror-red' : 'text-horror-text-dim/40'}`}>
+                  {label}
+                </span>
+              </div>
+              <ul className="flex flex-col gap-2">
+                {notes.map((note) => (
+                  <li key={note} className="flex items-start gap-3">
+                    <span className={`mt-[7px] w-1 h-1 rounded-full flex-shrink-0 ${current ? 'bg-horror-red' : 'bg-horror-text-dim/30'}`} />
+                    <span className={`font-body text-sm leading-relaxed ${current ? 'text-horror-text' : 'text-horror-text-dim/40'}`}>
+                      {note}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </RevealSection>
+        ))}
+      </div>
     </section>
   )
 }
