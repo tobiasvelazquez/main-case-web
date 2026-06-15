@@ -326,7 +326,7 @@ const PATCH_NOTES = [
     current: true,
     notes: [
       'Capítulo 1 completo — casa suburbana y escape',
-      'Boss Bagman con 5 niveles de enojo y fase de enrage',
+      'Boss Bagman que se enfurece al recibir disparos y al juntar las 5 grabaciones',
       '5 grabaciones coleccionables',
       '9 notas distribuidas en el escenario',
       'Sistema de stamina para sprint y salto',
@@ -360,9 +360,9 @@ function VersionPreviewSection() {
         </div>
       </RevealSection>
 
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-2 gap-6 items-stretch">
         {PATCH_NOTES.map(({ version, label, current, notes }, vi) => (
-          <RevealSection key={version} delay={vi * 0.08}>
+          <RevealSection key={version} delay={vi * 0.08} className="h-full">
             <div className={`card-horror h-full border ${current ? 'border-horror-border' : 'border-horror-border/40'}`}>
               <div className="flex items-baseline gap-3 mb-5">
                 <p className={`font-mono text-xl tracking-widest ${current ? 'text-white' : 'text-horror-text-muted/60'}`}>
