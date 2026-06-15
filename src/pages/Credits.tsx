@@ -134,7 +134,7 @@ export default function Credits() {
                           <p
                             className={`font-body mt-1.5 ${
                               isCenter
-                                ? 'text-[#f2f2ec] text-3xl md:text-[2.3rem] md:whitespace-nowrap'
+                                ? 'text-horror-gold text-3xl md:text-[2.3rem] md:whitespace-nowrap'
                                 : 'text-horror-text-muted/35 text-xl md:text-[1.45rem]'
                             }`}
                             style={isCenter ? { textShadow: '0 0 22px rgba(255,255,255,0.16)' } : undefined}
@@ -178,7 +178,7 @@ export default function Credits() {
                         key={item.name}
                         className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 border-b border-white/5 pb-3"
                       >
-                        <span className="font-body text-[#f2f2ec]/80 text-base leading-snug flex-1">
+                        <span className="font-body text-horror-gold text-base leading-snug flex-1">
                           {item.url ? (
                             <a
                               href={item.url}
