@@ -360,23 +360,23 @@ function VersionPreviewSection() {
         </div>
       </RevealSection>
 
-      <div className="flex flex-col gap-6 max-w-lg">
+      <div className="grid md:grid-cols-2 gap-6">
         {PATCH_NOTES.map(({ version, label, current, notes }, vi) => (
           <RevealSection key={version} delay={vi * 0.08}>
-            <div className={`card-horror border ${current ? 'border-horror-border' : 'border-horror-border/40'}`}>
-              <div className="flex items-baseline gap-3 mb-4">
-                <p className={`font-mono text-lg tracking-widest ${current ? 'text-white' : 'text-horror-text-dim/50'}`}>
+            <div className={`card-horror h-full border ${current ? 'border-horror-border' : 'border-horror-border/40'}`}>
+              <div className="flex items-baseline gap-3 mb-5">
+                <p className={`font-mono text-xl tracking-widest ${current ? 'text-white' : 'text-horror-text-muted/60'}`}>
                   v{version}
                 </p>
-                <span className={`font-mono text-xs tracking-[0.18em] uppercase ${current ? 'text-horror-red' : 'text-horror-text-dim/40'}`}>
+                <span className={`font-mono text-xs tracking-[0.18em] uppercase ${current ? 'text-horror-red' : 'text-horror-text-muted/40'}`}>
                   {label}
                 </span>
               </div>
-              <ul className="flex flex-col gap-2">
+              <ul className="flex flex-col gap-2.5">
                 {notes.map((note) => (
                   <li key={note} className="flex items-start gap-3">
-                    <span className={`mt-[7px] w-1 h-1 rounded-full flex-shrink-0 ${current ? 'bg-horror-red' : 'bg-horror-text-dim/30'}`} />
-                    <span className={`font-body text-sm leading-relaxed ${current ? 'text-horror-text' : 'text-horror-text-dim/40'}`}>
+                    <span className={`mt-[7px] w-1 h-1 rounded-full flex-shrink-0 ${current ? 'bg-horror-red' : 'bg-horror-text-muted/30'}`} />
+                    <span className={`font-body text-sm leading-relaxed ${current ? 'text-horror-text-muted' : 'text-horror-text-muted/40'}`}>
                       {note}
                     </span>
                   </li>
