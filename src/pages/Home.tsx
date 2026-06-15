@@ -339,6 +339,48 @@ function VersionPreviewSection() {
   )
 }
 
+const WINNERS = [
+  { pos: '01', name: null },
+  { pos: '02', name: null },
+  { pos: '03', name: null },
+  { pos: '04', name: null },
+  { pos: '05', name: null },
+]
+
+function WinnersSection() {
+  return (
+    <section className="py-16 max-w-7xl mx-auto px-6">
+      <RevealSection className="mb-8">
+        <div className="flex items-center gap-4 mb-2">
+          <span className="section-label">Hall of Fame</span>
+          <div className="flex-1 h-px bg-horror-border" />
+        </div>
+        <h2 className="section-title">Primeros 5 ganadores</h2>
+      </RevealSection>
+
+      <RevealSection delay={0.05}>
+        <div className="flex flex-col gap-2 max-w-sm">
+          {WINNERS.map(({ pos, name }, i) => (
+            <motion.div
+              key={pos}
+              className="flex items-center gap-5 border border-horror-border bg-horror-card px-5 py-3.5"
+              initial={{ opacity: 0, x: -12 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.4, delay: i * 0.06, ease: [0.23, 1, 0.32, 1] }}
+            >
+              <span className="font-mono text-xs tracking-[0.2em] text-horror-red tabular-nums">{pos}</span>
+              <span className={`font-body text-sm tracking-wide ${name ? 'text-white' : 'text-horror-text-dim/40'}`}>
+                {name ?? '???'}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+      </RevealSection>
+    </section>
+  )
+}
+
 function CTASection() {
   return (
     <section className="py-32 md:py-44 max-w-7xl mx-auto px-6 text-center">
@@ -367,6 +409,7 @@ export default function Home() {
         <BossCarouselSection />
         <GallerySection />
         <VersionPreviewSection />
+        <WinnersSection />
         <CTASection />
       </main>
     </PageTransition>

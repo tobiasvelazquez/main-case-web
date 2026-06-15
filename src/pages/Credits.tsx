@@ -60,7 +60,7 @@ const PERSONAL_CREDITS: Array<{ role: string; name: string | string[] }> = [
   { role: 'Diseño', name: 'Tobias Velazquez' },
   {
     role: 'Guión',
-    name: ['Tobias Velazquez', 'Sofia Rodriguez Olea', 'Lorenzo Velazquez'],
+    name: ['Tobias Velazquez', 'Guguex', 'Lorenzo Velazquez'],
   },
   { role: 'Audio', name: 'Tobias Velazquez' },
 ]
