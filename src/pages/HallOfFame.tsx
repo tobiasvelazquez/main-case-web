@@ -14,15 +14,15 @@ export default function HallOfFame() {
   return (
     <PageTransition>
       <main className="min-h-screen bg-horror-bg flex flex-col items-center justify-center px-6 py-28">
-        <RevealSection className="text-center mb-16">
+        <RevealSection className="text-center mb-6">
           <span className="section-label block mb-4">Registro</span>
           <h1 className="font-display leading-none tracking-wide text-white mb-4"
             style={{ fontSize: 'clamp(3rem, 10vw, 6rem)' }}>
             Hall of Fame
           </h1>
           <div className="w-12 h-px bg-horror-red mx-auto mt-4 mb-6" />
-          <p className="font-body text-horror-text-muted text-base max-w-sm mx-auto leading-relaxed">
-            Los primeros cinco en completar Main Case. Sus nombres quedan grabados aquí para siempre.
+          <p className="font-mono text-xs tracking-[0.2em] uppercase text-horror-text-muted/50">
+            ¿Serás uno de ellos?
           </p>
         </RevealSection>
 
@@ -40,18 +40,13 @@ export default function HallOfFame() {
                 {pos}
               </span>
               <div className="flex-1 h-px bg-horror-border/40" />
-              <span className={`font-body tracking-wide text-lg ${name ? 'text-white' : 'text-horror-text-dim/30'}`}>
+              <span className="font-body tracking-wide text-lg text-horror-gold">
                 {name ?? '???'}
               </span>
             </motion.div>
           ))}
         </div>
 
-        <RevealSection delay={0.5} className="mt-16 text-center">
-          <p className="font-mono text-xs tracking-[0.2em] uppercase text-horror-text-muted/40">
-            ¿Serás uno de ellos?
-          </p>
-        </RevealSection>
       </main>
     </PageTransition>
   )
